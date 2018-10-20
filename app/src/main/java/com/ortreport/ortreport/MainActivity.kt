@@ -1,5 +1,6 @@
 package com.ortreport.ortreport
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -66,6 +67,8 @@ class MainActivity : AppCompatActivity() {
         when(item.itemId) {
             R.id.action_settings -> {
                 text_view.text = "Settings"
+                val randomIntent = Intent(this, SettingsActivity::class.java)
+                startActivity(randomIntent)
                 return true
             }
             R.id.action_home -> {
@@ -84,5 +87,6 @@ class MainActivity : AppCompatActivity() {
             return super.onOptionsItemSelected(item)
 
         }
+
     }
 
