@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Hey! You tapped me!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
+        val actionBar = supportActionBar
+
+        actionBar!!.title = "Ort Report"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -31,17 +34,26 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when(item.itemId) {
-            R.id.action_settings -> true
-            else -> super.onOptionsItemSelected(item)
+        when(item.itemId) {
+            R.id.action_settings -> {
+                text_view.text = "Settings"
+                return true
+            }
+            R.id.action_home -> {
+                text_view.text = "Home"
+                return true
+            }
+            R.id.action_tips -> {
+                text_view.text = "Tips"
+                return true
+            }
+            R.id.action_tracker -> {
+                text_view.text = "Tracker"
+                return true
+            }
+        }
+            return super.onOptionsItemSelected(item)
+
         }
     }
 
-    companion object {
-
-        // Used to load the 'native-lib' library on application startup.
-        init {
-            System.loadLibrary("native-lib")
-        }
-    }
-}
