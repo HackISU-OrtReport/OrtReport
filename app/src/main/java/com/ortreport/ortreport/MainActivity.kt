@@ -69,12 +69,6 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when(item.itemId) {
-            R.id.action_settings -> {
-                text_view.text = "Settings"
-                val randomIntent = Intent(this, SettingsActivity::class.java)
-                startActivity(randomIntent)
-                return true
-            }
             R.id.action_home -> {
                 text_view.text = "Home"
                 val randomIntent = Intent(this, MainActivity::class.java)
@@ -90,6 +84,12 @@ class MainActivity : AppCompatActivity() {
                 text_view.text = "Tracker"
                 val randomIntent = Intent(this, TrackerActivity::class.java)
                 this.startActivity(randomIntent)
+                return true
+            }
+            R.id.action_settings -> {
+                text_view.text = "Settings"
+                val randomIntent = Intent(this, SettingsActivity::class.java)
+                startActivity(randomIntent)
                 return true
             }
         }

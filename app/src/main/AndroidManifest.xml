@@ -23,13 +23,18 @@
         </activity>
         <activity
                 android:name=".SettingsActivity"
-                android:label="OrtReport">
+                android:label="@string/ortreport_name"
+                android:parentActivityName=".MainActivity">
         </activity>
+
         <activity
                 android:name=".TrackerActivity"
-                android:label="OrtReport">
+                android:label="@string/ortreport_name"
+                android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".NotificationActivity">
+        <activity android:name=".NotificationActivity"
+                  android:label="@string/ortreport_name"
+                  android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
