@@ -79,4 +79,10 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="notif_switch">Receive Notifications?</string>
+    <string name="receive_notifications">Receive Notifications?</string>
+    <string name="will_remind_you_near_your_average_eating_times_for_inputs">Will remind you near your average eating
+        times for inputs
+    </string>
+    <string name="tracker_activity_name">OrtReport</string>
+    <string name="ortreport_name">OrtReport</string>
 </resources>

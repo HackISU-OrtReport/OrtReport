@@ -68,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                 startMainFunction()
             }
             R.id.action_tips -> {
+
             }
             R.id.action_tracker -> {
                 startTrackerFunction()
@@ -81,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun startMainFunction(){
+    private fun startMainFunction(){
         val randomIntent = Intent(this, MainActivity::class.java)
         startActivity(randomIntent)
     }
@@ -91,12 +92,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(randomIntent)
     }*/
 
-    fun startTrackerFunction(){
+    private fun startTrackerFunction(){
         val randomIntent = Intent(this, TrackerActivity::class.java)
         startActivity(randomIntent)
     }
 
-    fun startSettingsFunction(){
+    private fun startSettingsFunction(){
         val randomIntent = Intent(this, SettingsActivity::class.java)
         startActivity(randomIntent)
     }
