@@ -36,7 +36,7 @@ class SettingsActivity : AppCompatPreferenceActivity() {
     }
     // dependencies {
     //    implementation "com.android.support:support-compat:28.0.0";
-    //}
+    //}need to commit and push
 
     /**
      * Set up the [android.app.ActionBar], if the API is available.
