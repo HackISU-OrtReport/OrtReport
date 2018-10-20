@@ -18,17 +18,6 @@
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/colorPrimaryDark"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
-        <TextView
-                android:id="@+id/text_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="25dp"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-                android:textColor="#FFF"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:text="Enter Food Waste for Meal?"
-        />
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_main"/>

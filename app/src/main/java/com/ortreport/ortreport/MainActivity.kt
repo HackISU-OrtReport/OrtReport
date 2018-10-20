@@ -11,13 +11,8 @@ import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import android.support.v4.content.ContextCompat.startActivity
-
-
-
-// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_activity.*
-// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_content.*
-// import android.widget.Toast
-// import android.widget.SeekBar
+import android.support.v4.content.ContextCompat.startActivity
+import android.provider.AlarmClock.EXTRA_MESSAGE
 
 
 
@@ -69,33 +64,42 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when(item.itemId) {
-            R.id.action_settings -> {
-                text_view.text = "Settings"
-                val randomIntent = Intent(this, SettingsActivity::class.java)
-                this.startActivity(randomIntent)
-                return true
-            }
             R.id.action_home -> {
-                text_view.text = "Home"
-                val randomIntent = Intent(this, MainActivity::class.java)
-                this.startActivity(randomIntent)
-                // I hate testbranch, is it dead?
-                return true
+                startMainFunction()
             }
             R.id.action_tips -> {
-                text_view.text = "Tips"
-                return true
             }
             R.id.action_tracker -> {
-                text_view.text = "Tracker"
-                val randomIntent = Intent(this, TrackerActivity::class.java)
-                this.startActivity(randomIntent)
-                return true
+                startTrackerFunction()
+            }
+            R.id.action_settings -> {
+                startSettingsFunction()
             }
         }
             return super.onOptionsItemSelected(item)
-
         }
 
+
+
+    fun startMainFunction(){
+        val randomIntent = Intent(this, MainActivity::class.java)
+        startActivity(randomIntent)
     }
+
+    /*fun startTipsFunction(){
+        val randomIntent = Intent(this, MainActivity::class.java)
+        startActivity(randomIntent)
+    }*/
+
+    fun startTrackerFunction(){
+        val randomIntent = Intent(this, TrackerActivity::class.java)
+        startActivity(randomIntent)
+    }
+
+    fun startSettingsFunction(){
+        val randomIntent = Intent(this, SettingsActivity::class.java)
+        startActivity(randomIntent)
+    }
+
+}
 
