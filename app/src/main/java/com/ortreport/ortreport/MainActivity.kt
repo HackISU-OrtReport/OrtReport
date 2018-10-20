@@ -17,19 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Hey! You tapped me!", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-        testButtonOne.setOnClickListener { view ->
-            Snackbar.make(view, "Oui, mate! Why you tappin' me?", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        bigBoi.setOnClickListener { view ->
-            Snackbar.make(view, "Big boi no like tapping.", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
-    // Example of a call to a native method
-    sample_text.text = stringFromJNI()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -47,12 +36,6 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    external fun stringFromJNI(): String
 
     companion object {
 
