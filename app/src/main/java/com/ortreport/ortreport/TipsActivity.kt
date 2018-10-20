@@ -12,17 +12,17 @@ import android.support.v4.content.ContextCompat.startActivity
 import android.widget.SeekBar
 
 
-import kotlinx.android.synthetic.main.activity_setting.*
+import kotlinx.android.synthetic.main.tipspageactivity.*
 import android.widget.Toast
 
 
 
 
-class SettingsActivity : AppCompatActivity() {
+class TipsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting)
+        setContentView(R.layout.tipspageactivity)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
