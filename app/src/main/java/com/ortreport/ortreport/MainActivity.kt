@@ -19,6 +19,14 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Hey! You tapped me!", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
+        testButtonOne.setOnClickListener { view ->
+            Snackbar.make(view, "Oui, mate! Why you tappin' me?", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+        bigBoi.setOnClickListener { view ->
+            Snackbar.make(view, "Big boi no like tapping.", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
 
     // Example of a call to a native method
     sample_text.text = stringFromJNI()
