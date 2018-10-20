@@ -1,18 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                             xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-                                             android:layout_height="match_parent">
-
-    <android.support.constraint.ConstraintLayout
-            android:layout_width="368dp"
-            android:layout_height="144dp" tools:layout_editor_absoluteX="8dp"
-    >
-
+<android.support.v7.widget.FitWindowsLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+tools:context = "com.ortreport.ortreport.SettingsActivity"
+android:padding="24dp"
+android:orientation="vertical">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+                  android:padding="10dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="?attr/textcolor"
+                android:text="Enable Dark Mode"/>
         <Switch
-                android:text="@string/notif_switch"
-                android:layout_width="350dp"
-                android:layout_height="51dp"
-                tools:layout_editor_absoluteX="14dp" android:id="@+id/switch1"
-                tools:layout_editor_absoluteY="16dp"/>
-    </android.support.constraint.ConstraintLayout>
-</android.support.constraint.ConstraintLayout>
+                android:id="@+id/myswitch"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Night Mode"
+                android:textColor="?attr/textcolor" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="?attr/textcolor"
+                android:text="Notifications"
+        />
+        <Switch
+                android:text="Receive Notifications"
+                android:textColor="?attr/textcolor"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/switch1"
+                android:contentDescription="@string/will_remind_you_near_your_average_eating_times_for_inputs"/>
+
+        <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+                <TextView
+                        android:textStyle="bold"
+                        android:textColor="?attr/textcolor"
+                        android:text="About"
+                        android:layout_width = "wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="45dp"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/textcolor"
+                        android:text="Food security is a necessity for humankind to thrive and with all the food waste or food security keeps lowering each year as we continue to waste food but not produce more or even as much. Our goal with this app is to provide a way for others to be mindful and reminded about food waste with weekly update about their food security index and raise awareness of the food we waste and the lack of food for the rest of the world and how we can help each other by lessening our food waste."
+                        android:layout_marginTop="8dp"/>
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+
+
+</android.support.v7.widget.FitWindowsLinearLayout>

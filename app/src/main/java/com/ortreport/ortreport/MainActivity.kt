@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> {
                 text_view.text = "Settings"
                 val randomIntent = Intent(this, SettingsActivity::class.java)
-                startActivity(randomIntent)
+                this.startActivity(randomIntent)
                 return true
             }
             R.id.action_home -> {
