@@ -31,12 +31,12 @@ private fun createNotificationChannel() {
         //val descriptionText = getString(R.string.channel_description)
         //val importance = NotificationManager.IMPORTANCE_DEFAULT
         //val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
-         //   description = descriptionText
-        }
-        // Register the channel with the system
-        //val notificationManager: NotificationManager =
-          //  getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-        //notificationManager.createNotificationChannel(channel)
+        //   description = descriptionText
     }
+    // Register the channel with the system
+    //val notificationManager: NotificationManager =
+    //  getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    //notificationManager.createNotificationChannel(channel)
+}
 
 

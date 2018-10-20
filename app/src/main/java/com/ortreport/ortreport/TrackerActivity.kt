@@ -27,12 +27,6 @@ class TrackerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trackerdatacollectionpageslider_activity)
-        // setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        val actionBar = supportActionBar
-
-        actionBar!!.title = "Ort Report"
 
         simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             var progressChangedValue = 0
@@ -53,7 +47,6 @@ class TrackerActivity : AppCompatActivity() {
                 ).show()
             }
         })
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -67,32 +60,42 @@ class TrackerActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when(item.itemId) {
-            R.id.action_settings -> {
-                text_view2.text = "Settings"
-                val randomIntent = Intent(this, SettingsActivity::class.java)
-                startActivity(randomIntent)
-                return true
-            }
             R.id.action_home -> {
-                text_view2.text = "Home"
-                val randomIntent = Intent(this, MainActivity::class.java)
-                this.startActivity(randomIntent)
-                return true
+                startMainFunction()
             }
             R.id.action_tips -> {
-                text_view2.text = "Tips"
-                return true
             }
             R.id.action_tracker -> {
-                text_view2.text = "Tracker"
-                val randomIntent = Intent(this, TrackerActivity::class.java)
-                this.startActivity(randomIntent)
-                return true
+                startTrackerFunction()
+            }
+            R.id.action_settings -> {
+                startSettingsFunction()
             }
         }
-            return super.onOptionsItemSelected(item)
-
-        }
-
+        return super.onOptionsItemSelected(item)
     }
+
+
+
+    fun startMainFunction(){
+        val randomIntent = Intent(this, MainActivity::class.java)
+        startActivity(randomIntent)
+    }
+
+    /*fun startTipsFunction(){
+        val randomIntent = Intent(this, MainActivity::class.java)
+        startActivity(randomIntent)
+    }*/
+
+    fun startTrackerFunction(){
+        val randomIntent = Intent(this, TrackerActivity::class.java)
+        startActivity(randomIntent)
+    }
+
+    fun startSettingsFunction(){
+        val randomIntent = Intent(this, SettingsActivity::class.java)
+        startActivity(randomIntent)
+    }
+
+}
 
