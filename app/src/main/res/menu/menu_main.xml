@@ -7,12 +7,12 @@
         android:orderInCategory="100"
         app:showAsAction="never" />
     <item android:id="@+id/action_home"
-          android:title="@string/action_home"
+          android:title="action_home"
           app:showAsAction="never" />
     <item android:id="@+id/action_tips"
-          android:title="@string/action_tips"
+          android:title="action_tips"
           app:showAsAction="never" />
     <item android:id="@+id/action_tracker"
-          android:title="@string/action_tracker"
+          android:title="action_tracker"
           app:showAsAction="never" />
 </menu>

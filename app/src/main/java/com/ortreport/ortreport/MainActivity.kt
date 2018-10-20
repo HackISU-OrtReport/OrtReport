@@ -6,10 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 
-import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_activity.*
-import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_content.*
-import android.widget.Toast
-import android.widget.SeekBar
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
+
+// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_activity.*
+// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_content.*
+// import android.widget.Toast
+// import android.widget.SeekBar
 
 
 
@@ -19,18 +22,19 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.trackerdatacollectionpageslider_activity)
+        // setContentView(R.layout.trackerdatacollectionpageslider_activity)
+        setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
+        fab.setOnCl ickListener { view ->
             Snackbar.make(view, "Hey! You tapped me!", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        menu
+
         val actionBar = supportActionBar
 
         actionBar!!.title = "Ort Report"
-
+        /*
         simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             var progressChangedValue = 0
 
@@ -50,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
         })
+        */
 
     }
 
