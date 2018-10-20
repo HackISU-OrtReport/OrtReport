@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 text_view.text = "Home"
                 val randomIntent = Intent(this, MainActivity::class.java)
                 this.startActivity(randomIntent)
-                // this is a test!
+                // I hate testbranch, is it dead?
                 return true
             }
             R.id.action_tips -> {
