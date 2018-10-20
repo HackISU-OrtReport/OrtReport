@@ -26,11 +26,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnCl ickListener { view ->
-            Snackbar.make(view, "Hey! You tapped me!", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         val actionBar = supportActionBar
 
         actionBar!!.title = "Ort Report"
