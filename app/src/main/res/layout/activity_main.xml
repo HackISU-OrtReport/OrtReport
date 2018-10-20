@@ -27,7 +27,7 @@
                 android:textColor="#FFF"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                android:text="@string/tap_an_item_from_action_bar_menu"
+                android:text="Enter Food Waste for Meal?"
         />
     </android.support.design.widget.AppBarLayout>
 

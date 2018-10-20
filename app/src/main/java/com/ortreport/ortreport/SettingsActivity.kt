@@ -16,6 +16,7 @@ import android.preference.PreferenceManager
 import android.preference.RingtonePreference
 import android.text.TextUtils
 import android.view.MenuItem
+import android.support.v4.app.NotificationCompat
 
 /**
  * A [PreferenceActivity] that presents a set of application settings. On
@@ -34,6 +35,9 @@ class SettingsActivity : AppCompatPreferenceActivity() {
         setupActionBar()
         setContentView(R.layout.activity_setting)
     }
+    // dependencies {
+    //    implementation "com.android.support:support-compat:28.0.0";
+    //}
 
     /**
      * Set up the [android.app.ActionBar], if the API is available.
