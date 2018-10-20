@@ -8,33 +8,32 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
+// import kotlinx.android.synthetic.main.activity_main.*
+// import kotlinx.android.synthetic.main.content_main.*
 import android.support.v4.content.ContextCompat.startActivity
+import android.widget.SeekBar
+
+
+import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_activity.*
+import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_content.*
+import android.widget.Toast
 
 
 
-// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_activity.*
-// import kotlinx.android.synthetic.main.trackerdatacollectionpageslider_content.*
-// import android.widget.Toast
-// import android.widget.SeekBar
 
-
-
-
-class MainActivity : AppCompatActivity() {
+class TrackerActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.trackerdatacollectionpageslider_activity)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.trackerdatacollectionpageslider_activity)
+        // setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar
 
         actionBar!!.title = "Ort Report"
-        /*
+
         simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             var progressChangedValue = 0
 
@@ -49,12 +48,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 Toast.makeText(
-                    this@MainActivity, "Seek bar progress is :$progressChangedValue",
+                    this@TrackerActivity, "Seek bar progress is :$progressChangedValue",
                     Toast.LENGTH_SHORT
                 ).show()
             }
         })
-        */
 
     }
 
@@ -70,23 +68,23 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         when(item.itemId) {
             R.id.action_settings -> {
-                text_view.text = "Settings"
+                text_view2.text = "Settings"
                 val randomIntent = Intent(this, SettingsActivity::class.java)
                 startActivity(randomIntent)
                 return true
             }
             R.id.action_home -> {
-                text_view.text = "Home"
+                text_view2.text = "Home"
                 val randomIntent = Intent(this, MainActivity::class.java)
                 this.startActivity(randomIntent)
                 return true
             }
             R.id.action_tips -> {
-                text_view.text = "Tips"
+                text_view2.text = "Tips"
                 return true
             }
             R.id.action_tracker -> {
-                text_view.text = "Tracker"
+                text_view2.text = "Tracker"
                 val randomIntent = Intent(this, TrackerActivity::class.java)
                 this.startActivity(randomIntent)
                 return true
