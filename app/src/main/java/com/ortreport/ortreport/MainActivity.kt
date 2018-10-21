@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         val intentTracker = intent
         val trackerNum = intentTracker.getIntExtra("wastedFood", 50)
-        val stateIDNum = intentTracker.getIntExtra("stateID", 50)
+        val stateIDText = intentTracker.getStringExtra("stateID")
         val stateList = arrayOf("Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Missouri","Mississippi","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming")
         val surplusFoodList: DoubleArray = doubleArrayOf(1726045390.305,-45277179.372,1366968240.545,3261246259.073,16992418138.642,2290429368.742,-23371725.882,464941117.284,1319734726.958,2647254960.224,163849548.485,2744714378.278,5782599557.332,3723714471.122,10330010960.844,5977592655.723,1890205924.508,809525138.530,164258927.916,499350413.997,-236094507.398,2180881450.164,6465005560.589,1920062387.641,3457845943.807,1302589984.131,8239162317.399,56280047.646,13243798.815,-84870261.124,985050163.618,763448283.983,3663818479.194,3114068813.958,2516391352.447,2282038357.533,1583649038.429,1807283252.521,-41930656.574,553383783.186,3465503481.677,869446430.186,6922901103.069,488746855.804,272948342.716,877706120.608,3565026018.559,146772311.836,4145137043.690,522464233.787)
-        trackerText.text = trackerNum.toString() + " " + stateList[trackerNum - 1]
-        // trackerText.text = stateIDNum.toString()
+        // trackerText.text = trackerNum.toString() + " " + stateList[trackerNum - 1]
+        trackerText.text = stateIDText
 
 
         val actionBar = supportActionBar
