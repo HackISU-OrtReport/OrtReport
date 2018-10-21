@@ -65,17 +65,16 @@ class SettingsActivity : AppCompatActivity() {
         switch1 = findViewById(R.id.switch1) as Switch
         myswitch = findViewById(R.id.myswitch) as Switch
 
-
-        if (myswitch.isChecked) {
-            //AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            setTheme(R.style.DarkTheme)
-            restartApp()
-        } else {
-           // AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            setTheme(R.style.AppTheme)
-            restartApp()
-        }
-
+        myswitch.setOnClickListener {
+                if (myswitch.isChecked) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            //setTheme(R.style.DarkTheme)
+                    restartApp()
+                } else {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            //setTheme(R.style.AppTheme)
+                    restartApp()
+                 }}
 
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
