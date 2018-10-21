@@ -11,6 +11,7 @@ import android.view.MenuItem
 // import kotlinx.android.synthetic.main.activity_main.*
 // import kotlinx.android.synthetic.main.content_main.*
 import android.support.v4.content.ContextCompat.startActivity
+import android.view.View
 import android.widget.SeekBar
 
 
@@ -32,7 +33,7 @@ class TrackerActivity : AppCompatActivity() {
 
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
                 progressChangedValue = progress
-                ortReporter.text = "$progress %"
+                ortReporter.text = "$progress%"
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -46,6 +47,11 @@ class TrackerActivity : AppCompatActivity() {
                 ).show()
             }
         })
+    }
+
+    fun lockInData(view : View){
+        var wastedFoodPercentage = simpleSeekBar.progress
+        submitButton.text = "$wastedFoodPercentage"
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
