@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 
 
+
 class PostsAdapter(val posts: ArrayList<String>) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
 
     override fun getItemCount()= posts.size

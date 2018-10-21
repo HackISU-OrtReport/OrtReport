@@ -9,22 +9,26 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.support.v4.content.ContextCompat.startActivity
+import android.support.v7.widget.CardView
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
 import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.tiplayout.*
 
 class TipsActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    // private lateinit var viewManager: RecyclerView.LayoutManager
     private lateinit var linearLayoutManager: LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tiplayout)
+        var tipRecycler = findViewById(R.id.tipRecycler) as RecyclerView
         linearLayoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = linearLayoutManager
+        tipRecycler.layoutManager = linearLayoutManager
+
 
         val darkness = intent
         val dark = darkness.getBooleanExtra("NightMode", false)
@@ -65,8 +69,8 @@ class TipsActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
-        recyclerView.adapter = PostsAdapter(posts)
+        tipRecycler.layoutManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
+        tipRecycler.adapter = PostsAdapter(posts)
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
