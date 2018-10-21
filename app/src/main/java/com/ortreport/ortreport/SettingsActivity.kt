@@ -50,6 +50,8 @@ class SettingsActivity : AppCompatActivity() {
     /**/
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_setting)
         val darkness = intent
         val dark = darkness.getBooleanExtra("NightMode", false)
         if (dark) {
@@ -57,8 +59,6 @@ class SettingsActivity : AppCompatActivity() {
         } else {
             setTheme(R.style.AppTheme)
         }
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting)
 
         // dependencies {
         //    implementation "com.android.support:support-compat:28.0.0";
