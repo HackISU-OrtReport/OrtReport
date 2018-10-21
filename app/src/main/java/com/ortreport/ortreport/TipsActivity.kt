@@ -14,7 +14,7 @@ import android.support.v7.widget.RecyclerView
 import android.widget.SeekBar
 
 
-import kotlinx.android.synthetic.main.tipspageactivity.*
+import kotlinx.android.synthetic.main.tiplayout.*
 import android.widget.Toast
 
 
@@ -26,7 +26,7 @@ class TipsActivity : AppCompatActivity() {
     private lateinit var viewManager: RecyclerView.LayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tipspageactivity)
+        setContentView(R.layout.tiplayout)
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

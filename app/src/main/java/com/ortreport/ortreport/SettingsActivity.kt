@@ -35,7 +35,7 @@ import android.widget.Toast
  * for design guidelines and the [com.ortreport.ortreport.Settings API Guide](http://developer.android.com/guide/topics/ui/settings.html)
  * for more information on developing a com.ortreport.ortreport.Settings UI.
  */
-class SettingsActivity : AppCompatPreferenceActivity() {
+class SettingsActivity : AppCompatActivity(){
     internal lateinit var myswitch : Switch
     internal lateinit var switch1 : Switch
     lateinit var notificationManager : NotificationManager
@@ -43,30 +43,30 @@ class SettingsActivity : AppCompatPreferenceActivity() {
     lateinit var builder : Notification.Builder
     private val channelId = "com.ortreport.ortreport"
     private val description = "Remember to log in your daily food intake!"
+    /**/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_setting)
 
         // dependencies {
         //    implementation "com.android.support:support-compat:28.0.0";
         //}need to commit and push
-        setContentView(R.layout.activity_setting)
 
-        /**
+        /*
          * Set up the [android.app.ActionBar], if the API is available.
-         */
+        */
         myswitch = findViewById(R.id.myswitch) as Switch
         switch1 = findViewById(R.id.switch1) as Switch
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-        myswitch.setOnClickListener {
+        switch1.setOnClickListener {
 
             val intent = Intent(this, LauncherActivity::class.java)
             val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-            if (myswitch.isChecked) {
+            if (switch1.isChecked) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     notificationChannel =
                             NotificationChannel(channelId, description, NotificationManager.IMPORTANCE_HIGH)
@@ -93,8 +93,9 @@ class SettingsActivity : AppCompatPreferenceActivity() {
                 notificationManager.notify(1234, builder.build())
             }
         }
-
     }
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
