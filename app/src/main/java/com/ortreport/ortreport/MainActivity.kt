@@ -69,13 +69,6 @@ class MainActivity : AppCompatActivity() {
 
         actionBar!!.title = "ORTrepORT"
 
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
     }
 
 

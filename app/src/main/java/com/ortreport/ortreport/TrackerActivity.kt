@@ -28,13 +28,7 @@ class TrackerActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trackerdatacollectionpageslider_activity)
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
+
         simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             var progressChangedValue = 0
 

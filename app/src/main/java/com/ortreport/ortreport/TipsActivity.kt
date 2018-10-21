@@ -14,20 +14,13 @@ class TipsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.listview_item)
+        setContentView(R.layout.tiplayout)
 
-        val adapter = ArrayAdapter(this,R.layout.listview_item, array)
+        val adapter = ArrayAdapter(this,R.layout.tiplayout, array)
 
         val listView: ListView = findViewById(R.id.listview_1)
         listView.setAdapter(adapter)
 
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
 
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

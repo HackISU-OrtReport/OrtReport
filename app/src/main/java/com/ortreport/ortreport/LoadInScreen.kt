@@ -30,13 +30,7 @@ class LoadInScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_load_in_screen)
         setSupportActionBar(toolbar)
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
+
         val spinner: Spinner = findViewById(R.id.spinner1)
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(

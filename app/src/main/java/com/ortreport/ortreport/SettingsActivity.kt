@@ -52,13 +52,6 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
 
         // dependencies {
         //    implementation "com.android.support:support-compat:28.0.0";
@@ -75,9 +68,11 @@ class SettingsActivity : AppCompatActivity() {
         myswitch.setOnClickListener(){
             if (myswitch.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                setTheme(R.style.DarkTheme)
                 restartApp()
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                setTheme(R.style.AppTheme)
                 restartApp()
             }
         }
@@ -117,13 +112,6 @@ class SettingsActivity : AppCompatActivity() {
                 notificationManager.notify(1234, builder.build())
             }
         }
-    }
-    fun isItDark(view : View){
-        var NightMode = isDark
-        // submitButton.text = "$wastedFoodPercentage"
-        val takeBackIntent = Intent(this, MainActivity::class.java)
-        takeBackIntent.putExtra("NightMode", NightMode)
-        startActivity(takeBackIntent)
     }
 
 
