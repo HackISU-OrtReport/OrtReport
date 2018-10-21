@@ -44,10 +44,8 @@ android:background="?attr/backgroundcolor"            >
                 android:paddingBottom="10dp"/>
 
         <android.support.v7.widget.CardView
-                app:cardBackgroundColor="=?attr/cardbackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-                android:
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -67,8 +65,6 @@ android:background="?attr/backgroundcolor"            >
                         android:text="Food security is a necessity for humankind to thrive and with all the food waste or food security keeps lowering each year as we continue to waste food but not produce more or even as much. Our goal with this app is to provide a way for others to be mindful and reminded about food waste with weekly update about their food security index and raise awareness of the food we waste and the lack of food for the rest of the world and how we can help each other by lessening our food waste."
                         android:layout_marginTop="8dp"/>
             </LinearLayout>
-
-
         </android.support.v7.widget.CardView>
     </LinearLayout>
 
