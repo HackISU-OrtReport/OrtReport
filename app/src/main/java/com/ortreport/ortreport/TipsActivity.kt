@@ -14,7 +14,7 @@ class TipsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tiplayout)
+        setContentView(R.layout.listview_item)
 
         val adapter = ArrayAdapter(this,R.layout.listview_item, array)
 
