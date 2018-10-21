@@ -6,7 +6,8 @@
                                              android:layout_height="match_parent"
 tools:context = "com.ortreport.ortreport.SettingsActivity"
 android:padding="24dp"
-android:orientation="vertical">
+android:orientation="vertical"
+android:background="?attr/backgroundcolor"            >
     <LinearLayout android:layout_width="match_parent"
                   android:layout_height="match_parent"
                   android:orientation="vertical"
@@ -43,8 +44,10 @@ android:orientation="vertical">
                 android:paddingBottom="10dp"/>
 
         <android.support.v7.widget.CardView
+                app:cardBackgroundColor="=?attr/cardbackground"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+                android:
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

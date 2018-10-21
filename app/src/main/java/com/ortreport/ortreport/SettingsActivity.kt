@@ -18,6 +18,7 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.support.v4.content.ContextCompat.startActivity
+import android.support.v7.app.AppCompatDelegate
 import android.widget.SeekBar
 
 
@@ -35,17 +36,22 @@ import android.widget.Toast
  * for design guidelines and the [com.ortreport.ortreport.Settings API Guide](http://developer.android.com/guide/topics/ui/settings.html)
  * for more information on developing a com.ortreport.ortreport.Settings UI.
  */
-class SettingsActivity : AppCompatActivity(){
-    internal lateinit var myswitch : Switch
-    internal lateinit var switch1 : Switch
-    lateinit var notificationManager : NotificationManager
-    lateinit var notificationChannel : NotificationChannel
-    lateinit var builder : Notification.Builder
+class SettingsActivity : AppCompatActivity() {
+    internal lateinit var myswitch: Switch
+    internal lateinit var switch1: Switch
+    lateinit var notificationManager: NotificationManager
+    lateinit var notificationChannel: NotificationChannel
+    lateinit var builder: Notification.Builder
     private val channelId = "com.ortreport.ortreport"
     private val description = "Remember to log in your daily food intake!"
     /**/
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_setting)
 
@@ -56,8 +62,20 @@ class SettingsActivity : AppCompatActivity(){
         /*
          * Set up the [android.app.ActionBar], if the API is available.
         */
-        myswitch = findViewById(R.id.myswitch) as Switch
+
         switch1 = findViewById(R.id.switch1) as Switch
+        myswitch = findViewById(R.id.myswitch) as Switch
+
+        myswitch.setOnClickListener {
+            if (myswitch.isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                restartApp()
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                restartApp()
+            }
+        }
+
 
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -106,7 +124,7 @@ class SettingsActivity : AppCompatActivity(){
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        when(item.itemId) {
+        when (item.itemId) {
             R.id.action_home -> {
                 startMainFunction()
             }
@@ -124,25 +142,30 @@ class SettingsActivity : AppCompatActivity(){
     }
 
 
-
-    private fun startMainFunction(){
+    private fun startMainFunction() {
         val randomIntent = Intent(this, MainActivity::class.java)
         startActivity(randomIntent)
     }
 
-    private fun startTipsFunction(){
+    private fun startTipsFunction() {
         val randomIntent = Intent(this, TipsActivity::class.java)
         startActivity(randomIntent)
     }
 
-    private fun startTrackerFunction(){
+    private fun startTrackerFunction() {
         val randomIntent = Intent(this, TrackerActivity::class.java)
         startActivity(randomIntent)
     }
 
-    private fun startSettingsFunction(){
+    private fun startSettingsFunction() {
         val randomIntent = Intent(this, SettingsActivity::class.java)
         startActivity(randomIntent)
+    }
+
+    private fun restartApp() {
+        val i = Intent(this, SettingsActivity::class.java)
+        startActivity(i)
+        finish()
     }
 
 }
