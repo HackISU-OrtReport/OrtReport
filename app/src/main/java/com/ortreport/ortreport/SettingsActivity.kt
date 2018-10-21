@@ -77,6 +77,7 @@ class SettingsActivity : AppCompatActivity() {
                 isDark = true
                 restartApp()
             } else {
+                
                 isDark = false
                 restartApp()
             }
