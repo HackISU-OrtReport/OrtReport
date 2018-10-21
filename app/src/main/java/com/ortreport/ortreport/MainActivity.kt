@@ -36,26 +36,6 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
 
         actionBar!!.title = "Ort Report"
-        /*
-        simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            var progressChangedValue = 0
-
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                progressChangedValue = progress
-                ortReporter.text = "$progress %"
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
-            }
-            override fun onStopTrackingTouch(seekBar: SeekBar) {
-                Toast.makeText(
-                    this@MainActivity, "Seek bar progress is :$progressChangedValue",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
-        */
 
     }
 

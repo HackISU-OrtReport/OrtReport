@@ -85,4 +85,5 @@
     </string>
     <string name="tracker_activity_name">OrtReport</string>
     <string name="ortreport_name">OrtReport</string>
+    <string name="title_activity_load_in_screen">LoadInScreen</string>
 </resources>
