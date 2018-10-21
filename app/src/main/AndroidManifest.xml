@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.ortreport.ortreport">
 
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -27,24 +29,15 @@
                 android:parentActivityName=".MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.ortreport.ortreport.MainActivity" />
+                    android:value="com.ortreport.ortreport.MainActivity"/>
         </activity>
-
         <activity
                 android:name=".TrackerActivity"
                 android:label="@string/ortreport_name"
                 android:parentActivityName=".MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.ortreport.ortreport.MainActivity" />
-        </activity>
-
-        <activity android:name=".NotificationActivity"
-                  android:label="@string/ortreport_name"
-                  android:parentActivityName=".MainActivity">
-            <meta-data
-                    android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.ortreport.ortreport.MainActivity" />
+                    android:value="com.ortreport.ortreport.MainActivity"/>
         </activity>
 
         <activity android:name=".TipsActivity"
