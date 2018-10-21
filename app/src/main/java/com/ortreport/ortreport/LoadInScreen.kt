@@ -65,6 +65,7 @@ class LoadInScreen : AppCompatActivity() {
 
     fun lockInData(view : View){
         val takeBackIntent = Intent(this, MainActivity::class.java)
+        takeBackIntent.putExtra("processID", 1)
         takeBackIntent.putExtra("stateID", selectedItemText)
         startActivity(takeBackIntent)
     }
