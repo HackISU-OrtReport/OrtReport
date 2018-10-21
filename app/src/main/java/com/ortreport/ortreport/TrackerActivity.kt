@@ -25,6 +25,9 @@ import android.widget.Toast
 class TrackerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.trackerdatacollectionpageslider_activity)
         val darkness = intent
         val dark = darkness.getBooleanExtra("NightMode", false)
         if (dark) {
@@ -32,9 +35,6 @@ class TrackerActivity : AppCompatActivity() {
         } else {
             setTheme(R.style.AppTheme)
         }
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.trackerdatacollectionpageslider_activity)
-
         simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             var progressChangedValue = 0
 
