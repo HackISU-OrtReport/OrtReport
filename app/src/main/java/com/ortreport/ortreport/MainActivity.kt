@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
             override fun onStartTrackingTouch(seekBar: SeekBar) {
                 // TODO Auto-generated method stub
             }
-
             override fun onStopTrackingTouch(seekBar: SeekBar) {
                 Toast.makeText(
                     this@MainActivity, "Seek bar progress is :$progressChangedValue",
