@@ -13,11 +13,9 @@ import kotlinx.android.synthetic.main.content_main.*
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v4.content.ContextCompat.startActivity
 import android.provider.AlarmClock.EXTRA_MESSAGE
-import android.widget.EditText
-import android.widget.TextView
 import android.provider.AlarmClock.EXTRA_MESSAGE
-//repushing
-
+import android.view.View
+import android.widget.*
 
 
 
@@ -30,13 +28,16 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         val intentTracker = intent
         val trackerNum = intentTracker.getIntExtra("wastedFood", 50)
+        val stateIDNum = intentTracker.getIntExtra("stateID", 50)
         val stateList = arrayOf("Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Missouri","Mississippi","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming")
-        val fsnList: DoubleArray = doubleArrayOf(414457756.0,59749342.8,517044095.2,251472370.8,2519695371.0,348889547.2,230596930.4,62196235.92,1586675646.0,797384990.6,95770546.83,113273038.2,682414723.6,415963359.4,170930571.8,189078966.7,322758456.3,394619731.8,110230718.9,359546388.6,384563109.8,692896010.1,263303000.7,437562022.8,311037443.6,65298601.62,112144707.2,195597403.3,67846710.75,506190695.6,163472449.1,1267262896.0,786061765.4,29713374.18,845866675.1,319131308.2,269327331.6,839176971.4,69787907.28,342906804.2,52983696.57,505869147.0,1990685843.0,188003779.7,44528490.72,478230465.7,457866439.0,129045724.1,296329939.9,39377821.14)
-
+        val surplusFoodList: DoubleArray = doubleArrayOf(1726045390.305,-45277179.372,1366968240.545,3261246259.073,16992418138.642,2290429368.742,-23371725.882,464941117.284,1319734726.958,2647254960.224,163849548.485,2744714378.278,5782599557.332,3723714471.122,10330010960.844,5977592655.723,1890205924.508,809525138.530,164258927.916,499350413.997,-236094507.398,2180881450.164,6465005560.589,1920062387.641,3457845943.807,1302589984.131,8239162317.399,56280047.646,13243798.815,-84870261.124,985050163.618,763448283.983,3663818479.194,3114068813.958,2516391352.447,2282038357.533,1583649038.429,1807283252.521,-41930656.574,553383783.186,3465503481.677,869446430.186,6922901103.069,488746855.804,272948342.716,877706120.608,3565026018.559,146772311.836,4145137043.690,522464233.787)
         trackerText.text = trackerNum.toString() + " " + stateList[trackerNum - 1]
+        // trackerText.text = stateIDNum.toString()
+
+
         val actionBar = supportActionBar
 
-        actionBar!!.title = "Ort Report"
+        actionBar!!.title = "ORTrepORT"
 
         val darkness = intent
         val dark = darkness.getBooleanExtra("NightMode", false)
@@ -45,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         } else {
             setTheme(R.style.AppTheme)
         }
-
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -97,5 +98,16 @@ class MainActivity : AppCompatActivity() {
         startActivity(randomIntent)
     }
 
+    private fun startLoadInFunction(){
+        val randomIntent = Intent(this, LoadInScreen::class.java)
+        startActivity(randomIntent)
+    }
+
+    fun startLoadInFunctionPub(view : View){
+        val randomIntent = Intent(this, LoadInScreen::class.java)
+        startActivity(randomIntent)
+    }
 }
+
+
 
