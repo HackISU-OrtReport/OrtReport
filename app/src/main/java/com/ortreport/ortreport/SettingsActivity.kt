@@ -5,6 +5,7 @@ import android.app.Notification
 import android.content.Context
 import android.app.Activity
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.preference.PreferenceActivity
@@ -19,6 +20,7 @@ import android.view.MenuItem
 
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AppCompatDelegate
+import android.view.View
 import android.widget.SeekBar
 
 
@@ -42,12 +44,15 @@ class SettingsActivity : AppCompatActivity() {
     lateinit var notificationManager: NotificationManager
     lateinit var notificationChannel: NotificationChannel
     lateinit var builder: Notification.Builder
+    private var isDark = false
     private val channelId = "com.ortreport.ortreport"
     private val description = "Remember to log in your daily food intake!"
     /**/
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+        val darkness = intent
+        val dark = darkness.getBooleanExtra("NightMode", false)
+        if (dark) {
             setTheme(R.style.DarkTheme)
         } else {
             setTheme(R.style.AppTheme)
@@ -63,15 +68,18 @@ class SettingsActivity : AppCompatActivity() {
          * Set up the [android.app.ActionBar], if the API is available.
         */
 
+
         switch1 = findViewById(R.id.switch1) as Switch
         myswitch = findViewById(R.id.myswitch) as Switch
 
-        myswitch.setOnClickListener {
+        myswitch.setOnClickListener(){
             if (myswitch.isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                isDark = true
                 restartApp()
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                isDark = false
                 restartApp()
             }
         }
@@ -111,6 +119,13 @@ class SettingsActivity : AppCompatActivity() {
                 notificationManager.notify(1234, builder.build())
             }
         }
+    }
+    fun isItDark(view : View){
+        var NightMode = isDark
+        // submitButton.text = "$wastedFoodPercentage"
+        val takeBackIntent = Intent(this, MainActivity::class.java)
+        takeBackIntent.putExtra("NightMode", NightMode)
+        startActivity(takeBackIntent)
     }
 
 

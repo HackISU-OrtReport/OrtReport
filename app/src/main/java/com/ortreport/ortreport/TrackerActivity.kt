@@ -25,6 +25,13 @@ import android.widget.Toast
 class TrackerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val darkness = intent
+        val dark = darkness.getBooleanExtra("NightMode", false)
+        if (dark) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trackerdatacollectionpageslider_activity)
 

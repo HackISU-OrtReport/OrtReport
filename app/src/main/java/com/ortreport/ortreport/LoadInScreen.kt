@@ -17,6 +17,13 @@ class LoadInScreen : AppCompatActivity() {
     private var button: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val darkness = intent
+        val dark = darkness.getBooleanExtra("NightMode", false)
+        if (dark) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_load_in_screen)
         setSupportActionBar(toolbar)
