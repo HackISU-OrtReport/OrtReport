@@ -16,7 +16,7 @@ class TipsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tiplayout)
 
-        val adapter = ArrayAdapter(this,R.layout.tiplayout, array)
+        val adapter = ArrayAdapter(this,R.layout.listview_item, array)
 
         val listView: ListView = findViewById(R.id.listview_1)
         listView.setAdapter(adapter)
