@@ -23,7 +23,6 @@ import android.widget.Toast
 
 class TrackerActivity : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.trackerdatacollectionpageslider_activity)
@@ -64,6 +63,7 @@ class TrackerActivity : AppCompatActivity() {
                 startMainFunction()
             }
             R.id.action_tips -> {
+                startTipsFunction()
             }
             R.id.action_tracker -> {
                 startTrackerFunction()
@@ -77,22 +77,22 @@ class TrackerActivity : AppCompatActivity() {
 
 
 
-    fun startMainFunction(){
+    private fun startMainFunction(){
         val randomIntent = Intent(this, MainActivity::class.java)
         startActivity(randomIntent)
     }
 
-    /*fun startTipsFunction(){
-        val randomIntent = Intent(this, MainActivity::class.java)
+    private fun startTipsFunction(){
+        val randomIntent = Intent(this, TipsActivity::class.java)
         startActivity(randomIntent)
-    }*/
+    }
 
-    fun startTrackerFunction(){
+    private fun startTrackerFunction(){
         val randomIntent = Intent(this, TrackerActivity::class.java)
         startActivity(randomIntent)
     }
 
-    fun startSettingsFunction(){
+    private fun startSettingsFunction(){
         val randomIntent = Intent(this, SettingsActivity::class.java)
         startActivity(randomIntent)
     }

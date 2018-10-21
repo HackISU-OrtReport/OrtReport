@@ -39,6 +39,14 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.ortreport.ortreport.MainActivity"/>
         </activity>
+
+        <activity android:name=".TipsActivity"
+                  android:label="@string/ortreport_name"
+                  android:parentActivityName=".MainActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.ortreport.ortreport.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

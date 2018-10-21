@@ -8,49 +8,21 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 import android.support.v4.content.ContextCompat.startActivity
-import android.support.v4.content.ContextCompat.startActivity
-import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.widget.SeekBar
+
+
+import kotlinx.android.synthetic.main.tipspageactivity.*
+import android.widget.Toast
 
 
 
 
-class MainActivity : AppCompatActivity() {
-
+class TipsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // setContentView(R.layout.trackerdatacollectionpageslider_activity)
-        setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-        val actionBar = supportActionBar
-
-        actionBar!!.title = "Ort Report"
-        /*
-        simpleSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            var progressChangedValue = 0
-
-            override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                progressChangedValue = progress
-                ortReporter.text = "$progress %"
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar) {
-                // TODO Auto-generated method stub
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar) {
-                Toast.makeText(
-                    this@MainActivity, "Seek bar progress is :$progressChangedValue",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-        })
-        */
-
+        setContentView(R.layout.tipspageactivity)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -77,8 +49,8 @@ class MainActivity : AppCompatActivity() {
                 startSettingsFunction()
             }
         }
-            return super.onOptionsItemSelected(item)
-        }
+        return super.onOptionsItemSelected(item)
+    }
 
 
 
@@ -103,4 +75,3 @@ class MainActivity : AppCompatActivity() {
     }
 
 }
-
