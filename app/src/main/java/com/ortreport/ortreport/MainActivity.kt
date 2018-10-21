@@ -19,6 +19,8 @@ import android.widget.*
 
 
 
+var firstRun = true
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+
+        if (firstRun){
+            firstRun = false
+            startLoadInFunction()
+        }
+
         val intentTracker = intent
         val trackerNum = intentTracker.getIntExtra("wastedFood", 50)
         val stateIDText = intentTracker.getStringExtra("stateID")
