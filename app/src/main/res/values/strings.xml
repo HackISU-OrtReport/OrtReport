@@ -83,8 +83,8 @@
     <string name="will_remind_you_near_your_average_eating_times_for_inputs">Will remind you near your average eating
         times for inputs
     </string>
-    <string name="tracker_activity_name">OrtReport</string>
-    <string name="ortreport_name">OrtReport</string>
+    <string name="tracker_activity_name">ORTrepORT</string>
+    <string name="ortreport_name">ORTrepORT</string>
     <string name="title_activity_load_in_screen">LoadInScreen</string>
     <string name="states_prompt">Choose your state of residence:</string>
     <string-array name="states_array">

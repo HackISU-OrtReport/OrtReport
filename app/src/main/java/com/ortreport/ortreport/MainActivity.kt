@@ -51,11 +51,17 @@ class MainActivity : AppCompatActivity() {
             if (surplusFoodList[userStateID] > 0){
                 trackerText.text = "Good news! If " + stateList[userStateID] + " were able to reuse all of its food waste, it would be able to feed its entire food-insecure population!"
             } else {
-                trackerText.text = "Aww. It doesn't look like " + stateList[userStateID] + " is currently able to support its food-insecure population with its food waste. Maybe it could with some help from it's neighbors!"
+                trackerText.text = "It doesn't look like " + stateList[userStateID] + " is currently able to support its food-insecure population with its food waste. Maybe it could with some help from it's neighbors!"
             }
         } else if (processID == 2){
             // getting data from tracker
             trackerNum = intentTracker.getIntExtra("wastedFood", 50)
+            if (trackerNum < 15){
+                trackerText.text = "It looks like you wasted only " + trackerNum.toString() + "% of your meal. Great work! You're well on your way to reducing food waste."
+            } else {
+                trackerText.text = "You wasted " + trackerNum.toString() +
+                        "% of your meal. Visit our tips page to find constructive ways of saving food."
+            }
         }
 
         processID = 0

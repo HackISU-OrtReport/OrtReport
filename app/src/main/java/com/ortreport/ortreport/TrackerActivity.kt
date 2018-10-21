@@ -42,10 +42,7 @@ class TrackerActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar) {
-                Toast.makeText(
-                    this@TrackerActivity, "Seek bar progress is :$progressChangedValue",
-                    Toast.LENGTH_SHORT
-                ).show()
+
             }
         })
     }
@@ -54,6 +51,7 @@ class TrackerActivity : AppCompatActivity() {
         var wastedFoodPercentage = simpleSeekBar.progress
         // submitButton.text = "$wastedFoodPercentage"
         val takeBackIntent = Intent(this, MainActivity::class.java)
+        takeBackIntent.putExtra("processID", 2)
         takeBackIntent.putExtra("wastedFood", wastedFoodPercentage)
         startActivity(takeBackIntent)
     }
