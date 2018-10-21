@@ -13,13 +13,10 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
     </android.support.design.widget.AppBarLayout>
-
-    <EditText
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/tips"
+            android:scrollbars="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="henlo i am tip, good you?"
-            android:ems="10"
-            android:id="@+id/editText"/>
+            android:layout_height="match_parent"/>
 
 </android.support.design.widget.CoordinatorLayout>

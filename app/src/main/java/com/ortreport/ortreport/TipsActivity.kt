@@ -9,6 +9,8 @@ import android.view.Menu
 import android.view.MenuItem
 
 import android.support.v4.content.ContextCompat.startActivity
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.widget.SeekBar
 
 
@@ -19,12 +21,14 @@ import android.widget.Toast
 
 
 class TipsActivity : AppCompatActivity() {
-
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tipspageactivity)
-    }
 
+    }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
