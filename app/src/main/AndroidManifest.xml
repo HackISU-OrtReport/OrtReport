@@ -39,13 +39,18 @@
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.ortreport.ortreport.MainActivity"/>
         </activity>
-
-        <activity android:name=".TipsActivity"
-                  android:label="@string/ortreport_name"
-                  android:parentActivityName=".MainActivity">
+        <activity
+                android:name=".TipsActivity"
+                android:label="@string/ortreport_name"
+                android:parentActivityName=".MainActivity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.ortreport.ortreport.MainActivity" />
+                    android:value="com.ortreport.ortreport.MainActivity"/>
+        </activity>
+        <activity
+                android:name=".LoadInScreen"
+                android:label="@string/title_activity_load_in_screen"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 
