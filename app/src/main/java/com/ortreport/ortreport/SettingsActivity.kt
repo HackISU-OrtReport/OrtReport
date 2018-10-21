@@ -102,7 +102,7 @@ class SettingsActivity : AppCompatActivity() {
                     notificationManager.createNotificationChannel(notificationChannel)
 
                     builder = Notification.Builder(this, channelId)
-                        .setContentTitle("Ort Report")
+                        .setContentTitle("ORTrepORT")
                         .setContentText("Remember to input your daily repOrt!")
                         .setSmallIcon(R.mipmap.ic_launcher_round)
                         .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher))
@@ -110,7 +110,7 @@ class SettingsActivity : AppCompatActivity() {
 
                 } else {
                     builder = Notification.Builder(this)
-                        .setContentTitle("Ort Report")
+                        .setContentTitle("ORTrepORT")
                         .setContentText("Remember to input your daily repOrt!")
                         .setSmallIcon(R.mipmap.ic_launcher_round)
                         .setLargeIcon(BitmapFactory.decodeResource(this.resources, R.drawable.ic_launcher))
