@@ -74,11 +74,9 @@ class SettingsActivity : AppCompatActivity() {
 
         myswitch.setOnClickListener(){
             if (myswitch.isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 isDark = true
                 restartApp()
             } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 isDark = false
                 restartApp()
             }
