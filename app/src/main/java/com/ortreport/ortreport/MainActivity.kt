@@ -24,13 +24,6 @@ import android.provider.AlarmClock.EXTRA_MESSAGE
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val darkness = intent
-        val dark = darkness.getBooleanExtra("NightMode", false)
-        if (dark) {
-            setTheme(R.style.DarkTheme)
-        } else {
-            setTheme(R.style.AppTheme)
-        }
         val EXTRA_MESSAGE = "com.ortreport.ortreport.extra.MESSAGE"
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -44,6 +37,14 @@ class MainActivity : AppCompatActivity() {
         val actionBar = supportActionBar
 
         actionBar!!.title = "Ort Report"
+
+        val darkness = intent
+        val dark = darkness.getBooleanExtra("NightMode", false)
+        if (dark) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
 
     }
 
