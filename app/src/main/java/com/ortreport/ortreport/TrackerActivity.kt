@@ -51,7 +51,10 @@ class TrackerActivity : AppCompatActivity() {
 
     fun lockInData(view : View){
         var wastedFoodPercentage = simpleSeekBar.progress
-        submitButton.text = "$wastedFoodPercentage"
+        // submitButton.text = "$wastedFoodPercentage"
+        val takeBackIntent = Intent(this, MainActivity::class.java)
+        takeBackIntent.putExtra("wastedFood", wastedFoodPercentage)
+        startActivity(takeBackIntent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
